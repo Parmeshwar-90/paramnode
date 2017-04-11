@@ -1,0 +1,32 @@
+{
+  "name": "perennial-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neeraj87/Perennial-node-course.git"
+  },
+  "author": "NJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neeraj87/Perennial-node-course/issues"
+  },
+  "homepage": "https://github.com/neeraj87/Perennial-node-course",
+  "dependencies": {
+    "async": "^2.3.0",
+    "body-parser": "^1.17.1",
+    //"cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "nodemon": "^1.11.0",
+    "request": "^2.81.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "express-generator": "^4.15.0"
+  }
+}
