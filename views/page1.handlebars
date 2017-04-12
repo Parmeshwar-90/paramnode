@@ -1,1 +1,9 @@
 <h5>this html is inside page 1</h5>
+<h1>This recors come from database </h1>
+<div class="col-sm-5">
+<ul class="list-group">
+  {{#each empData}}
+    <li  class="list-group-item">Employee Name : {{this.name}} & Designation : {{this.designation}}</li>
+  {{/each}}
+</ul>
+</div>

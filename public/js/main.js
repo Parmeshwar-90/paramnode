@@ -50,7 +50,7 @@ $(document).ready(function(){
 				obj.articles.forEach( function (arrayItem)
 				{
 				    //console.log(arrayItem.title);
-				    str += '<div class="container"><div class="row"><div class="col-sm-4"><div class="news"><div class="img-figure"><div class="cat">fashion</div><img src="'+arrayItem.urlToImage+'" class="img-responsive"></div><div class="title"><h1>'+arrayItem.title+'</h1></div><p class="description">'+arrayItem.description+'</p></div></div></div></div>';
+				    str += '<div class="container"><div class="row"><div class="col-sm-4"><div class="news"><div class="img-figure"><div class="cat">'+arrayItem.author+'</div><img src="'+arrayItem.urlToImage+'" class="img-responsive"></div><div class="title"><h3>'+arrayItem.title+'</h3></div><p class="description">'+arrayItem.description+'</p></div></div></div></div>';
 
 				});
 				$('#newbysource').html(str);
