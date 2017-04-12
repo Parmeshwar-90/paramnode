@@ -1,0 +1,25 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12"><h1>Check News Of World</h1></div>
+  </div>
+
+  <div class="row">
+	 <div class="col-sm-3">
+	 	<div class="form-group">
+	 	<label for="source">News Source:</label>
+		  	<select class="form-control" id="get-news">
+		  		{{#each sArr}}
+			    <li></li>
+			    <option value="{{this.id}}">{{this.name}}</option>
+			  {{/each}}
+			</select>
+	  	</div>
+	 </div>
+
+	 <div class="row">
+	 	<div class="col-sm-3" id="newbysource">
+
+	 	</div>
+	 </div>
+</div>

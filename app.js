@@ -12,6 +12,11 @@ var app = express();
 var page1 = require('./routes/page1');
 var jadhav = require('./routes/neeraj');
 var page3 = require('./routes/page3');
+var form = require('./routes/form');
+var user = require('./routes/user');
+var quote = require('./routes/quotes');
+var flagChecks = require('./config/checkFlag1');
+var news = require('./routes/news');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));		//set the app engine and default layout name 'main'
 
@@ -35,8 +40,42 @@ app.get('/page3', function(req, res) {
 });
 
 app.use('/page1', page1);
-app.use('/page2', jadhav);
+app.use('/page2', jadhav);//
+app.use('/page2', function(req,res,next){
+	if(!flagChecks.checkFlag1(app)) {
+		res.render('error');
+		return;
+	}
+	winston.log('info', flagChecks.constantString);
+	next();
+}, function(req, res, next){
+	if(!flagChecks.checkFlag2(app)) {
+		res.redirect('/error');
+		return;
+	}
+	next();
+}, jadhav);
 app.use('/page3', page3);
+
+app.use('/user', user);
+app.use('/quote', quote);
+app.use('/news', news);
+
+app.use(function(req, res, next){
+	var err = new Error('Not Found');
+	err.status = 404;
+	// next(err);
+	res.render('error', {
+		layout : 'layout2'
+	});
+});
+
+process.on('uncaughtException', function (err) {
+	winston.log('info', '-------------- UNCAUGHT EXCEPTION: ' + err);
+	winston.log('info', '------------- ERROR STACK -------------');
+	winston.log('info', err.stack);
+	winston.log('info', '---------------------------------------');
+});
 
 //create server and listen to the port
 http.createServer(app).listen(app.get('port'), function(){
