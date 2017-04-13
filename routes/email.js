@@ -35,7 +35,7 @@ router.post('/emailsend', function(req, res){
 
 	// setup email data with unicode symbols
 	let mailOptions = {
-	    from: '"Parmeshwar 👻" <parmeshwar.patil@perennialsys.com>', // sender address
+	    from: '"Parmeshwar 👻" <parmeshwarpatil956@gmail.com>', // sender address
 	    to: to_email, // list of receivers
 	    subject: subject, // Subject line
 	    text: message, // plain text body
