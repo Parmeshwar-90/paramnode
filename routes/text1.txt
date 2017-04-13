@@ -1,0 +1,3 @@
+attachments option in the message object that contains an array of attachment objects.
+
+Attachment object consists of the following properties:

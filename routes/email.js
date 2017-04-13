@@ -39,6 +39,16 @@ router.post('/emailsend', function(req, res){
 	    to: to_email, // list of receivers
 	    subject: subject, // Subject line
 	    text: message, // plain text body
+	    attachments: [
+        {   // file on disk as an attachment
+            filename: 'myattachment.txt',
+            path: '/home/perennial/node-training/paramnode/public/attachment/text1.txt' // stream this file
+
+            // utf-8 string as an attachment
+            // filename: 'text1.txt',
+            // content: 'hello world!'
+        },
+    ]
 	};
 
 	// send mail with defined transport object
