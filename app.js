@@ -17,6 +17,7 @@ var user = require('./routes/user');
 var quote = require('./routes/quotes');
 var flagChecks = require('./config/checkFlag1');
 var news = require('./routes/news');
+var email = require('./routes/email');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));		//set the app engine and default layout name 'main'
 
@@ -31,13 +32,13 @@ app.use(bodyParser.json());
 //app.use(cookieParser()); 										// read cookies (needed for auth)
 
 
-app.get('/page3', function(req, res) {
-  var name = req.param('name');
-  var email = req.param('email');
-  var message = req.param('message');  
+// app.get('/page3', function(req, res) {
+//   var name = req.param('name');
+//   var email = req.param('email');
+//   var message = req.param('message');  
 
-  res.send(name + ' ' + email + ' ' + message);
-});
+//   res.send(name + ' ' + email + ' ' + message);
+// });
 
 app.use('/page1', page1);
 app.use('/page2', jadhav);//
@@ -60,6 +61,7 @@ app.use('/page3', page3);
 app.use('/user', user);
 app.use('/quote', quote);
 app.use('/news', news);
+app.use('/email', email);
 
 app.use(function(req, res, next){
 	var err = new Error('Not Found');
