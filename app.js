@@ -7,6 +7,9 @@ var http = require('http');
 var path = require('path');
 var winston = require('winston');
 
+// var passport = require('passport');
+// var LocalStrategy = require('passport-local').Strategy;
+
 var app = express();
 
 var page1 = require('./routes/page1');
@@ -18,6 +21,8 @@ var quote = require('./routes/quotes');
 var flagChecks = require('./config/checkFlag1');
 var news = require('./routes/news');
 var email = require('./routes/email');
+var sch = require('./routes/sch');
+var info = require('./routes/info');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));		//set the app engine and default layout name 'main'
 
@@ -29,6 +34,14 @@ app.set('view engine', 'handlebars');							//define the view engine
 app.use(express.static(path.join(__dirname, 'public')));		//declares the location of static resources (css, js ,images)
 app.use(bodyParser.urlencoded({extended:true}));            	// parse application/x-www-form-urlencoded
 app.use(bodyParser.json());
+
+app.use(require('express-session')({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}));
+
+
 //app.use(cookieParser()); 										// read cookies (needed for auth)
 
 
@@ -62,6 +75,8 @@ app.use('/user', user);
 app.use('/quote', quote);
 app.use('/news', news);
 app.use('/email', email);
+app.use('/sch', sch);
+app.use('/info', info);
 
 app.use(function(req, res, next){
 	var err = new Error('Not Found');

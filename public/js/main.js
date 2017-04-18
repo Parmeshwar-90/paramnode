@@ -62,4 +62,20 @@ $(document).ready(function(){
 		});
 	});
 
+	$('#by-time-slot').show();
+	$('#by-frequenc').hide();
+	//$('#no_of_days').val(1);
+	$('.btntype').click(function(){
+		var v = $(this).attr('rel');
+		if(v == "by-time-slot"){
+			$('#by-time-slot').show();
+			$('#by-frequenc').hide();
+		}
+		if(v == "by-frequency"){
+			$('#by-frequenc').show();
+			$('#by-time-slot').hide();
+		}
+
+	});
+
 });

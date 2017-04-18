@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12"><h1>Select Patient self monitoring schedule</h1></div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-12 col-sm-offset-3" style="padding-top:30px">
+        <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary btntype" rel="by-time-slot">By Time Slot</button>
+        <button type="button" class="btn btn-primary btntype" rel="by-frequency">By Frequency </button>
+      </div>
+      </div>
+      <div class="clearfix"></div>
+
+      <div class="col-sm-12">
+      <form class="form-horizontal" role="form" action="/sch/show" method="post">
+      <div class="col-sm-12" id="by-time-slot">
+        <hr>
+        <div class="row">
+          <div class="col-sm-10">
+            <div class="row">
+
+              <div class="col-md-3">
+                <div class="well">
+                  
+                  <label class="checkbox-inline"><input type="checkbox" name="before_breakfast" id="before_breakfast"/><a class="text-danger" href="javascript:void(0);">Before Breakfast </a></label>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="well">
+
+                 <label class="checkbox-inline"><input type="checkbox" name="before_lunch" id="before_lunch"/><a class="text-danger" href="javascript:void(0);">Before lunch </a></label>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="well">
+                <label class="checkbox-inline"><input type="checkbox" name="before_dinner" id="before_dinner"/><a class="text-danger" href="javascript:void(0);">Before dinner </a></label>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="well">
+                 <label class="checkbox-inline"><input type="checkbox" name="before_suffer" id="before_suffer"/><a class="text-danger" href="javascript:void(0);">Before suffer </a></label>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="well">
+                <label class="checkbox-inline"><input type="checkbox" name="after_breakfast" id="after_breakfast"/><a class="text-danger" href="javascript:void(0);">After suffer </a></label>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="well">
+                <label class="checkbox-inline"><input type="checkbox" name="after_lunch" id="after_lunch"/><a class="text-danger" href="javascript:void(0);">After lunch </a></label>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="well">
+                  <label class="checkbox-inline"><input type="checkbox" name="after_dinner" id="after_dinner"/><a class="text-danger" href="javascript:void(0);">After dinner </a></label>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="well">
+                  <label class="checkbox-inline"><input type="checkbox" name="after_suffer" id="after_suffer"/><a class="text-danger" href="javascript:void(0);">After suffer </a></label>
+                </div>
+              </div>
+
+            </div><!--/row-->    
+          </div><!--/col-12-->
+        </div><!--/row-->
+    </div>
+
+    <hr>
+      <div class="col-sm-6" id="by-frequenc">
+        <div class="col-xs-3 col-sm-offset-3">
+          <div class="form-group">
+              <input type="number" name="no_of_days" id="no_of_days" />
+          </div>
+       </div>
+
+        <div class="col-xs-3 col-sm-offset-3">
+          <div class="form-group">
+            <select class="selectpicker form-control" name="day_iteration" id="">
+              <option>day(s)</option>
+              <option>week(s)</option>
+              <option>month(s)</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+      </div>
+
+      <div class="col-sm-12 col-sm-offset-4">
+        <button type="submit" class="btn btn-success">Save</button>
+      </div>
+
+      </form>
+      </div>
+  </div>
+</div>

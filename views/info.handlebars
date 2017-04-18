@@ -1,0 +1,110 @@
+<div class="container">
+    <div class="row">
+        <h1>Patient treatment information</h1>
+      {{#if days}}
+          <div class="col-sm-10">
+            {{#if before_breakfast}}
+                <div class="col-sm-3 well">
+                  <span class="btn-success"> Before Breakfast : Yes</span>
+                </div>
+            {{else}}
+                <div class="col-sm-3 well">
+                  <span>Before Breakfast : No</span>
+                </div>
+            {{/if}}
+
+            {{#if before_lunch}}
+                <div class="col-sm-3 well">
+                  <span class="btn-success">Before Lunch : Yes</span>
+                </div>
+            {{else}}
+                <div class="col-sm-3 well">
+                  <span>Before Lunch : No</span>
+                </div>
+            {{/if}}
+
+            {{#if before_dinner}}
+                <div class="col-sm-3 well">
+                  <span class="btn-success">Before Dinner : Yes</span>
+                </div>
+            {{else}}
+                <div class="col-sm-3 well">
+                  <span>Before Dinner : No</span>
+                </div>
+            {{/if}}
+
+
+            {{#if before_suffer}}
+                <div class="col-sm-3 well">
+                  <span class="btn-success">Before Suffer : Yes</span>
+                </div>
+            {{else}}
+                <div class="col-sm-3 well">
+                  <span>Before Suffer : No</span>
+                </div>
+            {{/if}}
+
+            {{#if after_breakfast}}
+                <div class="col-sm-3 well">
+                  <span class="btn-success">After Breakfast : Yes</span>
+                </div>
+            {{else}}
+                <div class="col-sm-3 well">
+                  <span>After Breakfast : No</span>
+                </div>
+            {{/if}}
+
+
+            {{#if after_lunch}}
+                <div class="col-sm-3 well">
+                  <span class="btn-success">After Lunch : Yes</span>
+                </div>
+            {{else}}
+                <div class="col-sm-3 well">
+                  <span>After Lunch : No</span>
+                </div>
+            {{/if}}
+
+            {{#if after_dinner}}
+                <div class="col-sm-3 well">
+                  <span class="btn-success">After Dinner : Yes</span>
+                </div>
+            {{else}}
+                <div class="col-sm-3 well">
+                  <span>After Dinner : No</span>
+                </div>
+            {{/if}}
+
+            {{#if after_suffer}}
+                <div class="col-sm-3 well">
+                  <span class="btn-success">After Suffer : Yes</span>
+                </div>
+            {{else}}
+                <div class="col-sm-3 well">
+                  <span>After Suffer : No</span>
+                </div>
+            {{/if}}
+
+           {{#if days}}
+                <div class="col-sm-3 well">
+                  <span>Days : {{days}}</span>
+                </div>
+            {{else}}
+                
+            {{/if}}
+
+            {{#if days}}
+                <div class="col-sm-3 well">
+                  <span>Iteration : {{day_iteration}}</span>
+                </div>
+            {{else}}
+                
+            {{/if}}
+
+      </div>
+     {{else}}
+       <div class="alert alert-danger col-sm-6">
+       Please select frequency
+      </div>
+     {{/if}}
+</div>
