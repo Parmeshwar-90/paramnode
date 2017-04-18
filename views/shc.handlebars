@@ -13,7 +13,7 @@
       <div class="clearfix"></div>
 
       <div class="col-sm-12">
-      <form class="form-horizontal" role="form" action="/sch/show" method="post">
+      <form class="form-horizontal" id="patient-schedule" role="form" action="/sch/show" method="post">
       <div class="col-sm-12" id="by-time-slot">
         <hr>
         <div class="row">
@@ -23,50 +23,51 @@
               <div class="col-md-3">
                 <div class="well">
                   
-                  <label class="checkbox-inline"><input type="checkbox" name="before_breakfast" id="before_breakfast"/><a class="text-danger" href="javascript:void(0);">Before Breakfast </a></label>
+                  <label class="checkbox-inline"><input type="checkbox" name="before_breakfast" id="before_breakfast" class="cbk" />
+                  <a class="text-danger" href="javascript:void(0);">Before Breakfast </a></label>
                 </div>
               </div>
 
               <div class="col-md-3">
                 <div class="well">
 
-                 <label class="checkbox-inline"><input type="checkbox" name="before_lunch" id="before_lunch"/><a class="text-danger" href="javascript:void(0);">Before lunch </a></label>
+                 <label class="checkbox-inline"><input type="checkbox" name="before_lunch" id="before_lunch" class="cbk"/><a class="text-danger" href="javascript:void(0);">Before lunch </a></label>
                 </div>
               </div>
 
               <div class="col-md-3">
                 <div class="well">
-                <label class="checkbox-inline"><input type="checkbox" name="before_dinner" id="before_dinner"/><a class="text-danger" href="javascript:void(0);">Before dinner </a></label>
+                <label class="checkbox-inline"><input type="checkbox" name="before_dinner" id="before_dinner" class="cbk" /><a class="text-danger" href="javascript:void(0);">Before dinner </a></label>
                 </div>
               </div>
 
               <div class="col-md-3">
                 <div class="well">
-                 <label class="checkbox-inline"><input type="checkbox" name="before_suffer" id="before_suffer"/><a class="text-danger" href="javascript:void(0);">Before suffer </a></label>
+                 <label class="checkbox-inline"><input type="checkbox" name="before_suffer" id="before_suffer" class="cbk" /><a class="text-danger" href="javascript:void(0);">Before suffer </a></label>
                 </div>
               </div>
 
               <div class="col-md-3">
                 <div class="well">
-                <label class="checkbox-inline"><input type="checkbox" name="after_breakfast" id="after_breakfast"/><a class="text-danger" href="javascript:void(0);">After suffer </a></label>
+                <label class="checkbox-inline"><input type="checkbox" name="after_breakfast" id="after_breakfast" class="cbk" /><a class="text-danger" href="javascript:void(0);">After suffer </a></label>
                 </div>
               </div>
 
               <div class="col-md-3">
                 <div class="well">
-                <label class="checkbox-inline"><input type="checkbox" name="after_lunch" id="after_lunch"/><a class="text-danger" href="javascript:void(0);">After lunch </a></label>
+                <label class="checkbox-inline"><input type="checkbox" name="after_lunch" id="after_lunch" class="cbk" /><a class="text-danger" href="javascript:void(0);">After lunch </a></label>
                 </div>
               </div>
 
               <div class="col-md-3">
                 <div class="well">
-                  <label class="checkbox-inline"><input type="checkbox" name="after_dinner" id="after_dinner"/><a class="text-danger" href="javascript:void(0);">After dinner </a></label>
+                  <label class="checkbox-inline"><input type="checkbox" name="after_dinner" id="after_dinner"/ class="cbk"><a class="text-danger" href="javascript:void(0);" >After dinner </a></label>
                 </div>
               </div>
 
               <div class="col-md-3">
                 <div class="well">
-                  <label class="checkbox-inline"><input type="checkbox" name="after_suffer" id="after_suffer"/><a class="text-danger" href="javascript:void(0);">After suffer </a></label>
+                  <label class="checkbox-inline"><input type="checkbox" name="after_suffer" id="after_suffer" class="cbk"/><a class="text-danger" href="javascript:void(0);" >After suffer </a></label>
                 </div>
               </div>
 
@@ -103,5 +104,19 @@
 
       </form>
       </div>
+  </div>
+</div>
+
+
+<!-- set up the modal to start hidden and fade in and out -->
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- dialog body -->
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        Please select schedule first.
+      </div>
+    </div>
   </div>
 </div>

@@ -78,4 +78,17 @@ $(document).ready(function(){
 
 	});
 
+	$("#patient-schedule").submit(function(){
+	    if($(".cbk").prop('checked') != true){
+    		//alert("Please select proper schedule");
+    		$("#myModal").modal({                    // wire up the actual modal functionality and show the dialog
+		      "backdrop"  : "static",
+		      "keyboard"  : true,
+		      "show"      : true                     // ensure the modal is shown immediately
+		    });
+    		return false;
+		}
+	});
+    
+
 });
