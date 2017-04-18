@@ -80,14 +80,24 @@ $(document).ready(function(){
 
 	$("#patient-schedule").submit(function(){
 	    if($(".cbk").prop('checked') != true){
-    		//alert("Please select proper schedule");
-    		$("#myModal").modal({                    // wire up the actual modal functionality and show the dialog
+    		$("#myModal").modal({                    
 		      "backdrop"  : "static",
 		      "keyboard"  : true,
-		      "show"      : true                     // ensure the modal is shown immediately
+		      "show"      : true                     
 		    });
     		return false;
 		}
+
+		var days = $('#no_of_days').val();
+		if(days <= 0){
+			$("#daysModal").modal({                    
+		      "backdrop"  : "static",
+		      "keyboard"  : true,
+		      "show"      : true                     
+		    });
+    		return false;
+		}
+
 	});
     
 
