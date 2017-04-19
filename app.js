@@ -50,17 +50,11 @@ app.use(require('express-session')({
     saveUninitialized: false
 }));
 
+app.get('/',
+  function(req, res) {
+    res.render('shc');
+  });
 
-//app.use(cookieParser()); 										// read cookies (needed for auth)
-
-
-// app.get('/page3', function(req, res) {
-//   var name = req.param('name');
-//   var email = req.param('email');
-//   var message = req.param('message');  
-
-//   res.send(name + ' ' + email + ' ' + message);
-// });
 
 app.use('/page1', page1);
 app.use('/page2', jadhav);//
