@@ -3,9 +3,16 @@ var exphbs = require('express-handlebars');
 var router = express.Router();									//use express 4.0 router to define routes
 var bodyParser = require('body-parser'); 						//pull information from html post
 //var cookieParser = require('cookie-parser');
+const NodeCache = require( "node-cache" );
+
+
+
+//const myCache = new NodeCache( { stdTTL: 0, checkperiod: 0 } );
+
 var http = require('http');
 var path = require('path');
 var winston = require('winston');
+
 
 // var passport = require('passport');
 // var LocalStrategy = require('passport-local').Strategy;
@@ -23,6 +30,8 @@ var news = require('./routes/news');
 var email = require('./routes/email');
 var sch = require('./routes/sch');
 var info = require('./routes/info');
+var chat = require('./routes/chat');
+var student = require('./routes/student');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));		//set the app engine and default layout name 'main'
 
@@ -77,6 +86,8 @@ app.use('/news', news);
 app.use('/email', email);
 app.use('/sch', sch);
 app.use('/info', info);
+app.use('/chat', chat);
+app.use('/student', student);
 
 app.use(function(req, res, next){
 	var err = new Error('Not Found');

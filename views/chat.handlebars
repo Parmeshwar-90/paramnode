@@ -1,0 +1,41 @@
+<html>
+
+<head>
+
+</head>
+<title>{{title}}</title>
+<body>
+  <div>
+  <div>
+</div>
+  <br/>
+  <form class="form-horizontal" role="form" style="width: 50%;" action="">
+    <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">Message</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="message" name="message" placeholder="Message" value="">
+            <button>Send</button>
+        </div>
+         <ul id="messageslist"></ul>
+    </div>
+</form>
+  </div>
+</body>
+</html>
+
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script>
+      $(function () {
+        var socket = io();
+        $('form').submit(function(){
+          socket.emit('chat message', $('#message').val());
+          $('#message').val('');
+          return false;
+        });
+            socket.on('chat message', function(msg){
+            console.log("in handlebars connection event");
+            $('#messageslist').append($('<li>').text(msg));
+            window.scrollTo(0, document.body.scrollHeight);
+        });
+      });
+    </script>

@@ -1,0 +1,83 @@
+<div class="container"> 
+   <div class="row">
+         <div class="col-md-7">
+            <div class="well text-center">
+               <p><small>Student Add Form</small></p>
+
+               <form action="/student/add" method="post">
+                 <div class="form-group">
+                     <input class="form-control" id="stud_fname" maxlength="100" name="stud_fname" placeholder="First Name" type="text" />
+                  </div>
+
+                  <div class="form-group">
+                     <input class="form-control" id="stud_mname" name="stud_mname" placeholder="Father Name" type="text" />
+                  </div>
+                  
+                  <div class="form-group">
+                     <input class="form-control" id="stud_lname" name="stud_lname" placeholder="Last Name" type="text" />
+                  </div>
+                  
+                  <div class="form-group">
+                     <textarea class="form-control" cols="40" id="stud_address" name="stud_address" placeholder="Address" rows="4"></textarea>
+                  </div>
+
+                  <div class="form-group">
+                     <input class="form-control" id="stud_dob" name="stud_dob" placeholder="Date of birth" type="text" />
+                  </div>
+
+                  <div class="form-group">
+                     <input class="form-control" id="stud_std" name="stud_std" placeholder="Standerd" type="text" />
+                  </div>
+
+                  <input type="submit" value="add student" />
+               </form>
+               
+            </div>
+
+            <div class="well text-center">
+            	<h3>List Of Students</h3>
+            	<table class="table">
+					  <thead>
+					    <tr>
+					      <th>#</th>
+					      <th>First Name</th>
+					      <th>Middel Name</th>
+					      <th>Last Name</th>
+					      <th>Standerd</th>
+					      <th>DOB</th>
+					      <th>Action</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    {{#each studentData}}
+					    <tr>
+					      <th scope="row">{{this.student_id}}</th>
+					      <td>{{this.student_fname}}</td>
+					      <td>{{this.student_mname}}</td>
+					      <td>{{this.student_lname}}</td>
+					      <td>{{this.student_standerd}}</td>
+					      <td>{{this.student_dob}}</td>
+					      <td><a href="student/studentview/{{this.student_id}}">view </a> |Edit | Delete </td>
+					    </tr>
+					      {{/each}}
+					  </tbody>
+					</table>
+            </div>
+
+         </div>
+      </div>
+</div>
+
+
+<!-- set up the modal to start hidden and fade in and out -->
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- dialog body -->
+      <div class="modal-body"> {{id}}
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        Please select schedule first.
+      </div>
+    </div>
+  </div>
+</div>

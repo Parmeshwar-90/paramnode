@@ -87,7 +87,9 @@ $(document).ready(function(){
 	$("#patient-schedule").submit(function(){
 
 	    if(flag == "by-time-slot"){
-	    	if($(".cbk").prop('checked') != true){
+	    	var atLeastOneIsChecked = $('.cbk:checkbox:checked').length;
+	    	console.log(atLeastOneIsChecked);
+	    	if(atLeastOneIsChecked <= 0){
 	    		$("#myModal").modal({                    
 			      "backdrop"  : "static",
 			      "keyboard"  : true,
@@ -108,6 +110,11 @@ $(document).ready(function(){
 	    		return false;
 			}
 	    }
+	});
+
+	$('.student_view').click(function(){
+		id = $(this).attr('rel');
+		return false;
 	});
     
 

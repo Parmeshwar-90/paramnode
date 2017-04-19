@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="col-sm-6">
+        <h1>Student information</h1>
+      {{#each student_row}}
+          <div class="well text-left">
+               <div class="form-control col-sm-6">
+                  <lable>First Name </lable> : <span>{{student_fname}}</span>
+                </div>
+                <br/><br/>
+                <div class="form-control col-sm-6">
+                  <lable>Middle Name </lable> : <span>{{student_mname}}</span>
+                </div>
+                <br/><br/>
+                <div class="form-control col-sm-6">
+                  <lable>Last Name </lable> : <span>{{student_lname}}</span>
+                </div>
+                <br/><br/>
+                <div class="form-control col-sm-6">
+                  <lable>Address </lable> : <span>{{student_address}}</span>
+                </div>
+                <br/><br/>
+                <div class="form-control col-sm-6">
+                  <lable>Date Of Birth </lable> : <span>{{student_dob}}</span>
+                </div>
+                <br/><br/>
+                <div class="form-control col-sm-6">
+                  <lable>Standerd </lable> : <span>{{student_standerd}}</span>
+                </div>
+
+                <div class="col-sm-6">
+                  <a href="/student">Back</a>
+                </div>
+
+            </div>
+      {{/each}}
+
+    </div>
+</div>
